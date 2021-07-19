@@ -1,0 +1,20 @@
+<div class="container" style="background-color: darkcyan; height: 66vh;">
+    <div class="col-4"></div>
+
+        <div class="row" style="padding-top: 30px;">
+            <div class="col-4"></div>
+            <div class="col-4" style="border: 1px solid white;" >
+                <h1>{{aim}}</h1>
+                <h1 style="text-align: center; color:darkmagenta;">Login</h1>
+                <input type="text" class="form-control" id="uname" (change)="accNum($event)" [value]="acno" placeholder="Account Number"><br>
+                <input type="text" class="form-control" id="pwd" (change)="changepwd($event)" placeholder="Password"><br>
+                <div style="padding-left: 180px;">
+                    <button (click)="login()" class="btn-primary">Login</button>
+
+                </div>
+
+
+            </div>
+            <div class="col-4"></div>
+        </div>
+</div>
