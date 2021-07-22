@@ -1,20 +1,24 @@
-<div class="container" style="background-color: darkcyan; height: 66vh;">
+<div class="container" style=" height: 66vh;">
     <div class="col-4"></div>
 
-        <div class="row" style="padding-top: 30px;">
-            <div class="col-4"></div>
-            <div class="col-4" style="border: 1px solid white;" >
-                <h1>{{aim}}</h1>
-                <h1 style="text-align: center; color:darkmagenta;">Login</h1>
-                <input type="text" class="form-control" id="uname" (change)="accNum($event)" [value]="acno" placeholder="Account Number"><br>
-                <input type="text" class="form-control" id="pwd" (change)="changepwd($event)" placeholder="Password"><br>
-                <div style="padding-left: 180px;">
-                    <button (click)="login()" class="btn-primary">Login</button>
-
-                </div>
-
+    <div class="row" style="padding-top: 30px;">
+        <div class="col-4"></div>
+        <div class="col-4" style="border: 1px solid white;">
+            <h1>{{aim}}</h1>
+            <h1 style="text-align: center; color:darkmagenta;">Login</h1>
+            <form (ngSubmit)="login()">
+            <input type="text" class="form-control" id="uname" name="acno" [(ngModel)]="acno" placeholder="Account Number"><br>
+            <input type="text" class="form-control" id="pwd" name="pswd" [(ngModel)]="pswd" placeholder="Password"><br>
+            <div style="padding-left: 180px;">
+                <button type="submit" class="btn-primary">Login</button> &nbsp;&nbsp;
+                <a routerLink="register">SignUp</a>
 
             </div>
-            <div class="col-4"></div>
+        </form>
         </div>
+
+        <div class="col-4"></div>
+    </div>
 </div>
+<!-- (change)="accNum($event)"
+(change)="changepwd($event)" -->

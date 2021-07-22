@@ -1,0 +1,25 @@
+<div class="container" style=" height: 66vh;">
+    <div class="col-4"></div>
+
+        <div class="row" style="padding-top: 30px;">
+            <div class="col-4"></div>
+            <div class="col-4" style="border: 1px solid white;" >
+                <form (ngSubmit)="register()">
+
+            
+                <h1 style="text-align: center; color:darkmagenta;">Register</h1>
+                <input type="text" class="form-control" id="acno" name="acno" [(ngModel)]="acno"   placeholder="Account Number"><br>
+                <input type="text" class="form-control" id="uname" name="uname"    [(ngModel)] ="uname"  placeholder="UserName"><br>
+                <input type="text" class="form-control" id="pwd" name="pswd"   [(ngModel)] ="pswd"  placeholder="Password"><br>
+
+                <div style="padding-left: 180px;">
+                    <button type="submit" class="btn-primary">SignUp</button> &nbsp;&nbsp;
+                    
+                </div>
+            </form>
+
+            </div>
+       
+            <div class="col-4"></div>
+        </div>
+</div>

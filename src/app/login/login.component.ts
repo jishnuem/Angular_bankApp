@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,10 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
     aim="Welcome to SBL Bank"
-    acno="Enter your account number"
+    accno="Enter your account number"
 
-    accno=""
-    pwd=""
+    acno=""
+    pswd=""
 
   users:any = {
     1000:{acno: 1000, username: "Aby", password: "userone", balance:5000},
@@ -22,27 +23,25 @@ export class LoginComponent implements OnInit {
 
   }
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
-  accNum(event:any){
-    //console.log(event.target.value);
-    
-   this.accno=event.target.value
-  }
-  changepwd(event:any){
-    this.pwd=event.target.value
-    //console.log(event.target.value);
-
-  }
+ 
   login(){
-    var accno=this.accno;
-    var pwd=this.pwd;
+    var acno=this.acno;
+    console.log(acno);
+    
+    var pswd=this.pswd;
+    console.log(pswd);
+    
+    
+    
     let accDetails=this.users;
-    if(accno in accDetails){
-      if(pwd==accDetails[accno]["password"]){
+    if(acno in accDetails){
+      if(pswd==accDetails[acno]["password"]){
         alert("Login Successfull")
+        this.router.navigateByUrl("dashboard")
       }
       else{
       alert("Invalid Password")
@@ -53,5 +52,22 @@ export class LoginComponent implements OnInit {
     }
 
   }
+  // login(){
+  //   var accno=this.accno;
+  //   var pwd=this.pwd;
+  //   let accDetails=this.users;
+  //   if(accno in accDetails){
+  //     if(pwd==accDetails[accno]["password"]){
+  //       alert("Login Successfull")
+  //     }
+  //     else{
+  //     alert("Invalid Password")
+  //     }
+  //   }
+  //   else{
+  //     alert("Invalid Username")
+  //   }
+
+  // }
 
 }
